@@ -1,3 +1,80 @@
-h1{
-    background-color: red;
+:root{
+    --yellowZoo: #F2BB05;
+    --greenZoo: #4DA167;
+    --blackZoo: #211A1E;
+    --redZoo: #C3423F;
+    --blueZoo: #22AED1;
+}
+
+*{
+    color: var(--blackZoo);
+}
+
+.yellowZoo{
+    color: var(--yellowZoo);
+}
+.greenZoo{
+    color: var(--greenZoo);
+}
+.blackZoo{
+    color: var(--blackZoo);
+}
+.redZoo{
+    color: var(--redZoo);
+}
+.blueZoo{
+    color: var(--blueZoo);
+}
+.yellowZooBg{
+    background-color: var(--yellowZoo);
+}
+.greenZooBg{
+    background-color: var(--greenZoo);
+}
+.blackZooBg{
+    background-color: var(--blackZoo);
+}
+.redZooBg{
+    background-color: var(--redZoo);
+}
+.blueZooBg{
+    background-color: var(--blueZoo);
+}
+
+ul > li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--blackZoo)!important;
+}
+
+.gZooFont{
+    font-family: 'Zen Tokyo Zoo', cursive;
+}
+
+#homeHeader{
+    height: 470px;
+    background-image: url('../../public/images/headerZoo.webp');
+    background-position: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#homeHeaderH1{
+    transform: translateY(100px);
+    border: 3px solid var(--yellowZoo);
+    border-radius: 40px;
+    max-width: 600px;
+}
+
+#headerH1{
+    border: 3px solid var(--yellowZoo);
+    border-radius: 40px;
+    max-width: 600px;
+}
+
+.btn{
+    border-radius: 40px;
 }
