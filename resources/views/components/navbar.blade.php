@@ -20,14 +20,17 @@
           <ul class="d-lg-flex flex-lg-row">
             @guest
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="{{route('login')}}">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Registrati</a>
+              <a class="nav-link" href="{{route('register')}}">Registrati</a>
             </li>
             @else
             <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
+              <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('frm-logout').submit();">Logout</a>      
+              <form id="frm-logout" action="{{route('logout')}}" method="POST" class="d-none">
+                @csrf
+              </form>
             </li>
             @endguest
           </ul>
