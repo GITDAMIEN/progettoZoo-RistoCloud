@@ -1,5 +1,7 @@
 <x-layout>
 
+    <x-slot name="title">Login</x-slot>
+
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -22,7 +24,7 @@
           <label for="passwordInput" class="form-label">Password</label>
           <input type="password" class="form-control" id="passwordInput" name="password">
         </div>
-        <button type="submit" class="btn btn-warning w-50 mx-auto">Login</button>
+        <button type="submit" class="btn btn-warning w-50 mx-auto mt-3">Login</button>
     </form>
 
 </x-layout>

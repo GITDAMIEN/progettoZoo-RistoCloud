@@ -1,5 +1,7 @@
 <x-layout>
 
+    <x-slot name="title">Registrati</x-slot>
+
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -30,7 +32,7 @@
           <label for="passwordConfirmationInput" class="form-label">Ripeti la password</label>
           <input type="password" class="form-control" id="passwordConfirmationInput" name="password_confirmation">
         </div>
-        <button type="submit" class="btn btn-warning w-50 mx-auto">Registrati</button>
+        <button type="submit" class="btn btn-warning w-50 mx-auto mt-3">Registrati</button>
     </form>
 
 </x-layout>

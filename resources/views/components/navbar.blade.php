@@ -14,7 +14,10 @@
               <a class="nav-link" href="#">Categorie di animali</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Su di noi</a>
+              <a class="nav-link" href="{{route('aboutUs')}}">Su di noi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('contactUs')}}">Contattaci</a>
             </li>
           </ul>
           <ul class="d-lg-flex flex-lg-row">

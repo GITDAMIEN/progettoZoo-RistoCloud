@@ -35,20 +35,20 @@
   
     <!-- Section: Links  -->
     <section class="">
-      <div class="container text-center text-md-start mt-5">
+      <div class="container text-center text-md-start my-5">
         <!-- Grid row -->
-        <div class="row mt-3">
+        <div class="row my-3 align-items-center">
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto align-items-center d-flex justify-content-center">
             <!-- Content -->
-            <a href="{{route('welcome')}}" class="text-uppercase fw-bold fs-3 mb-4">
+            <a href="{{route('welcome')}}" class="fs-1 gZooFont">
               <i class="fa-solid fa-hippo me-2"></i>RistoZoo
             </a>
           </div>
           <!-- Grid column -->
   
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
              Link utili
@@ -57,13 +57,13 @@
               <a href="{{route('welcome')}}" class="text-reset">Home</a>
             </p>
             <p class="my-1">
-              <a href="/" class="text-reset">Categorie di animali</a>
+              <a href="/" class="text-reset">Tutti gli animali</a>
             </p>
             <p class="my-1">
               <a href="{{route('aboutUs')}}" class="text-reset">Su di noi</a>
             </p>
             <p class="my-1">
-              <a href="/" class="text-reset">Contattaci</a>
+              <a href="{{route('contactUs')}}" class="text-reset">Contattaci</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -71,7 +71,7 @@
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4 mt-3">Contatti</h6>
+            <h6 class="text-uppercase fw-bold mb-4 mt-3 mt-lg-0">Contatti</h6>
             <a href="https://www.google.com/maps/place/Ristocloud+Group+S.r.l./@45.4400035,10.6876826,15z/data=!4m2!3m1!1s0x0:0x4ff595f4dac578b1?sa=X&ved=2ahUKEwj1qpel7KX6AhWP_rsIHVKTCXEQ_BJ6BAhEEAU"><i class="fas fa-home me-3"></i> Via Risorgimento, 20 <br>37019 Peschiera del Garda VR</a><br>
             <a href="mailto:info@ristocloudgroup.com">
               <i class="fas fa-envelope me-3"></i>
