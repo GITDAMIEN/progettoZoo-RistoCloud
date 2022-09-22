@@ -57,7 +57,7 @@
               <a href="{{route('welcome')}}" class="text-reset">Home</a>
             </p>
             <p class="my-1">
-              <a href="/" class="text-reset">Tutti gli animali</a>
+              <a href="{{route('allAnimals')}}" class="text-reset">Tutti gli animali</a>
             </p>
             <p class="my-1">
               <a href="{{route('aboutUs')}}" class="text-reset">Su di noi</a>

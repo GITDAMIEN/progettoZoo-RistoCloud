@@ -11,7 +11,7 @@
               <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Categorie di animali</a>
+              <a class="nav-link" href="{{route('allAnimals')}}">Tutti gli animali</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('aboutUs')}}">Su di noi</a>

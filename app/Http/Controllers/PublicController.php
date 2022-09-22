@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Animal;
 use App\Mail\ThanksMail;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
@@ -26,12 +27,18 @@ class PublicController extends Controller
         return view('contactUs');
     }
     
+    public function allAnimals()
+    {
+        $allAnimals = Animal::all();
+        
+        return view('allAnimals', compact('allAnimals'));
+    }
+    
     public function contactForm(ContactRequest $request)
     {
         Mail::to($request->email)->send(new ThanksMail($request));
         Mail::to('amministrazione@ristozoo.it')->send(new ContactMail($request));
 
         return redirect()->route('welcome')->with('message','Grazie per averci contattato! Ti risponderemo via email molto presto!');
-
     }
 }

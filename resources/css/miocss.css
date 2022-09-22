@@ -78,3 +78,17 @@ a{
 .btn{
     border-radius: 40px;
 }
+
+.card-body{
+    position: relative;
+}
+
+#etaAnimale{
+    background-color: transparent;
+    border: 1px solid var(--blackZoo);
+    border-radius: 30px;
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    padding: 8px;
+}

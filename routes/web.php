@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
 Route::get('/aboutUs', [PublicController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/contactUs', [PublicController::class, 'contactUs'])->name('contactUs');
+Route::get('/allAnimals', [PublicController::class, 'allAnimals'])->name('allAnimals');
 
 Route::post('/contactForm', [PublicController::class, 'contactForm'])->name('contactForm');

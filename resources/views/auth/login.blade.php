@@ -12,9 +12,9 @@
     </div>
     @endif
 
-    <h3 class="text-center my-5 fs-3">Fai il login su RistoZoo</h3>
+    <h1 id="headerH1" class="text-center p-2 mt-5 mx-4 mx-md-auto offset-lg-3">Fai il login su RistoZoo</h1>
 
-    <form method="POST" action="{{route('login')}}" class="text-center d-flex justify-content-center flex-column">
+    <form method="POST" action="{{route('login')}}" class="text-center d-flex justify-content-center flex-column mt-5">
         @csrf
         <div class="mb-3 w-50 mx-auto">
           <label for="emailInput" class="form-label">Email</label>

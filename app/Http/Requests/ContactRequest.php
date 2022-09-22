@@ -25,27 +25,23 @@ class ContactRequest extends FormRequest
     {
         return [
             'name'=>'required|min:3|max:50',
-            'email'=>'required|min:2|max:50|email',
-            'message'=>'required|numeric',
+            'email'=>'required|min:8|max:50|email',
+            'message'=>'required|min:20',
         ];
     }
 
     public function messages()
     {
         return[
-            'title.required'=>'Il titolo è obbligatorio',
-            'author.required'=>"L'autore è obbligatorio",
-            'pages.required'=>'Il numero di pagine è obbligatorio',
-            'publisher.required'=>"L'editore è obbligatorio",
-            'title.min'=>"Il titolo dev'essere di minimo 2 caratteri",
-            'author.min'=>"L'autore dev'essere di minimo 2 caratteri",
-            'publisher.min'=>"L'editore dev'essere di minimo 2 caratteri",
-            'title.max'=>"Il titolo dev'essere di massimo 50 caratteri",
-            'author.max'=>"L'autore dev'essere di massimo 50 caratteri",
-            'publisher.max'=>"L'editore dev'essere di massimo 50 caratteri",
-            'pages.numeric'=>"Le pagine devono essere un valore numerico",
-            'img.required'=>"L'immagine è obbligatoria",
-            'img.image'=>"Il file dev'essere in formato immagine (jpg, jpeg, png, bmp, gif, svg, o webp)"
+            'name.required'=>'Il nome è obbligatorio',
+            'name.max'=>"Il nome dev'essere di massimo 50 caratteri",
+            'name.min'=>"Il nome dev'essere di minimo 3 caratteri",
+            'email.required'=>"L'indirizzo email è obbligatorio",
+            'email.min'=>"La mail dev'essere di minimo 8 caratteri",
+            'email.max'=>"La mail dev'essere di massimo 50 caratteri",
+            'email.email'=>"Inserisci un'indirizzo email valido",
+            'message.required'=>"Il messaggio è obbligatorio",
+            'message.min'=>"Il messaggio dev'essere di minimo 20 caratteri",
         ];
     }
 }
