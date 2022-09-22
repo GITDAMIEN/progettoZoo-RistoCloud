@@ -29,7 +29,7 @@ class PublicController extends Controller
     
     public function allAnimals()
     {
-        $allAnimals = Animal::all();
+        $allAnimals = Animal::orderBy('created_at')->paginate(16);
         
         return view('allAnimals', compact('allAnimals'));
     }

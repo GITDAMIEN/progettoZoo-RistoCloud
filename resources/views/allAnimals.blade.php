@@ -8,7 +8,7 @@
         @if (count($allAnimals)>0)
             <div class="gZooFont text-center mb-5 fs-1 redZoo">Ci sono animali nel DB da caricare</div>
         @else
-            <div class="gZooFont text-center mb-5 fs-1 redZoo">Nessun animale disponibile nel DB</div>
+            <div class="gZooFont text-center mb-5 fs-1 redZoo border">Nessun animale disponibile nel DB</div>
         @endif
     {{-- FIN QUI --}}
 
@@ -24,7 +24,7 @@
             </div>
             <div class="mb-3 col-12 col-md-6 col-lg-3">
                 <label for="ageSearch" class="form-label">Cerca per età (numero)</label>
-                <input type="text" class="form-control" id="ageSearch" placeholder="Cerca per età">
+                <input type="number" class="form-control" id="ageSearch" placeholder="Cerca per età">
             </div>
             <div class="mb-3 col-12 col-md-6 col-lg-3">
                 <label for="categorySearch" class="form-label">Cerca per categoria</label>
@@ -34,7 +34,7 @@
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn btn-warning w-25">Cerca</button>
+        <button type="button" id="searchBtn" class="btn btn-warning w-25 mt-2">Cerca</button>
     </form>
         
         
@@ -44,49 +44,50 @@
             <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
-                    <h5 class="card-title mt-2">Nome animale</h5>
-                    <p class="card-text">Categoria animale</p>
-                    <p class="card-text">Descrizione animale</p>
-                    <span id="etaAnimale">Età: 10 anni</span>
+                    <h5 class="card-title mt-2">Mucca</h5>
+                    <p class="card-text">Bovino</p>
+                    <p class="card-text">Detta anche vacca</p>
+                    <span id="etaAnimale">Età: <span>4</span> anni</span>
                 </div>
             </div>
             <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
-                    <h5 class="card-title mt-2">Nome animale</h5>
-                    <p class="card-text">Categoria animale</p>
-                    <p class="card-text">Descrizione animale</p>
-                    <span id="etaAnimale">Età: 10 anni</span>
+                    <h5 class="card-title mt-2">Gatto</h5>
+                    <p class="card-text">Felino</p>
+                    <p class="card-text">Animale ruffiano e approfittatore</p>
+                    <span id="etaAnimale">Età: <span>2</span> anni</span>
                 </div>
             </div>
             <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
-                    <h5 class="card-title mt-2">Nome animale</h5>
-                    <p class="card-text">Categoria animale</p>
-                    <p class="card-text">Descrizione animale</p>
-                    <span id="etaAnimale">Età: 10 anni</span>
+                    <h5 class="card-title mt-2">Cavallo</h5>
+                    <p class="card-text">Equino</p>
+                    <p class="card-text">Animale super elegante</p>
+                    <span id="etaAnimale">Età: <span>10</span> anni</span>
                 </div>
             </div>
             <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
-                    <h5 class="card-title mt-2">Nome animale</h5>
-                    <p class="card-text">Categoria animale</p>
-                    <p class="card-text">Descrizione animale</p>
-                    <span id="etaAnimale">Età: 10 anni</span>
+                    <h5 class="card-title mt-2">Maiale</h5>
+                    <p class="card-text">Suino</p>
+                    <p class="card-text">Non solo un animale</p>
+                    <span id="etaAnimale">Età: <span>7</span> anni</span>
                 </div>
             </div>
             <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
-                    <h5 class="card-title mt-2">Nome animale</h5>
-                    <p class="card-text">Categoria animale</p>
-                    <p class="card-text">Descrizione animale</p>
-                    <span id="etaAnimale">Età: 10 anni</span>
+                    <h5 class="card-title mt-2">Pecorina</h5>
+                    <p class="card-text">Ovino</p>
+                    <p class="card-text">Non solo un animale</p>
+                    <span id="etaAnimale">Età: <span>5</span> anni</span>
                 </div>
             </div>
         </div>
+        {{$allAnimals->links()}}
     </div>
 
 
