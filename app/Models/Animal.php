@@ -16,7 +16,4 @@ class Animal extends Model
         return $this->belongsTo(Category::class);
     }
 
-    // protected static function newFactory(){
-    //     return AnimalFactory::new();
-    // }
 }

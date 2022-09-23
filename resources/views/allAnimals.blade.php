@@ -3,7 +3,7 @@
     <x-slot name="title">Tutti gli animali</x-slot>
     
     @if(session('message'))
-        <div class="alert alert-success m-0">{{session('message')}}</div>
+        <div class="alert alert-success m-0 text-center">{{session('message')}}</div>
     @endif
 
     <h1 id="headerH1" class="text-center p-2 my-5 mx-4 mx-md-auto offset-lg-3">Tutti gli animali di RistoZoo</h1>
@@ -91,6 +91,18 @@
                     <span id="etaAnimale">Età: <span>5</span> anni</span>
                 </div>
             </div>
+
+            @foreach($allAnimals as $animal)
+                <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
+                    <img src="{{Storage::url($animal->image)}}" class="card-img-top" alt="Immagine di animale">
+                    <div class="card-body">
+                        <h5 class="card-title mt-2">{{$animal->name}}</h5>
+                        <p class="card-text" value="{{$animal->category_id}}">{{$animal->category->name}}</p>
+                        <p class="card-text">{{$animal->description}}</p>
+                        <span id="etaAnimale">Età: <span>{{$animal->age}}</span> anni</span>
+                    </div>
+                </div>
+            @endforeach
         </div>
         {{$allAnimals->links()}}
     </div>

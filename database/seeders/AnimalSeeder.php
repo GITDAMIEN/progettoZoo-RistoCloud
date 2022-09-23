@@ -19,80 +19,87 @@ class AnimalSeeder extends Seeder
         $animals = [
             [
                 'name' => 'Ippopotamo',
-                'category_id'=> '1',
+                'category_id'=> '87',
                 'description' => 'Animale acquatico ciccione',
                 'age' => '7',
-                'image' => ''
+                'image' => 'public/images/ippopotamo.jpeg'
             ],
             [
                 'name' => 'Scimpanzè',
-                'category_id'=> '3',
+                'category_id'=> '89',
                 'description' => 'Mangiatore seriale di banane',
                 'age' => '5',
-                'image' => ''
+                'image' => 'public/images/Scimpanzé.jpeg'
             ],
             [
                 'name' => 'Fenicottero',
-                'category_id'=> '2',
+                'category_id'=> '88',
                 'description' => 'Uccello rosa (volante)',
                 'age' => '3',
-                'image' => ''
+                'image' => 'public/images/fenicottero.jpeg'
             ],
             [
                 'name' => 'Coccodrillo',
-                'category_id'=> '1',
+                'category_id'=> '87',
                 'description' => 'Il coccodrillo come fa? Non c\'è nessuno che lo sa',
                 'age' => '8',
-                'image' => ''
+                'image' => 'public/images/coccodrillo.jpeg'
             ],
             [
                 'name' => 'Elefante',
-                'category_id'=> '3',
+                'category_id'=> '89',
                 'description' => 'Animale enorme con proboscite',
                 'age' => '15',
-                'image' => ''
+                'image' => 'public/images/elefante.jpeg'
             ],
             [
                 'name' => 'Giraffa',
-                'category_id'=> '3',
+                'category_id'=> '89',
                 'description' => 'Il collo più lungo della savana',
                 'age' => '4',
-                'image' => ''
+                'image' => 'public/images/giraffa.jpeg'
             ],
             [
                 'name' => 'Rinoceronte',
-                'category_id'=> '3',
+                'category_id'=> '89',
                 'description' => 'L\animale più cornificato dello zoo',
                 'age' => '10',
-                'image' => ''
+                'image' => 'public/images/rinoceronte.jpeg'
             ],
             [
                 'name' => 'Camaleonte',
-                'category_id'=> '3',
+                'category_id'=> '89',
                 'description' => 'Se lo vedi, è già troppo tardi',
                 'age' => '2',
-                'image' => ''
+                'image' => 'public/images/camaleonte.jpeg'
             ],
             [
                 'name' => 'Gazzella',
-                'category_id'=> '3',
+                'category_id'=> '89',
                 'description' => 'Ogni mattina, in Africa, una gazzella si alza e sa che deve correre più veloce del leone. Non da RistoZoo.',
                 'age' => '6',
-                'image' => ''
+                'image' => 'public/images/Gazzella.jpeg'
             ],
             [
                 'name' => 'Crotalo',
-                'category_id'=> '3',
+                'category_id'=> '89',
                 'description' => 'Non importa che tu sia un crotalo o un pavone, l\'importante è che se muori me lo dici prima',
                 'age' => '9',
-                'image' => ''
+                'image' => 'public/images/crotalo.jpeg'
             ],
             [
                 'name' => 'Mantide religiosa',
-                'category_id'=> '4',
+                'category_id'=> '90',
                 'description' => 'In realtà non sappiamo se prega o bestemmia',
                 'age' => '1',
-                'image' => ''
+                'image' => 'public/images/mantide religiosa.jpeg'
+            ],
+            [
+                'name' => 'Charmander',
+                'category_id'=> '91',
+                'description' => 'Da grande vuole essere un Charizard',
+                'age' => '1',
+                'image' => 'public/images/charmander.png'
             ],
         ];
 
@@ -106,87 +113,5 @@ class AnimalSeeder extends Seeder
             ]);
         }
 
-
-        // Animal::factory()
-        // ->for(Category::class)
-        // ->create([
-        //     [
-        //         'name' => 'Ippopotamo',
-        //         'category_id'=> '1',
-        //         'description' => 'Animale acquatico ciccione',
-        //         'age' => '7',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Scimpanzè',
-        //         'category_id'=> '3',
-        //         'description' => 'Mangiatore seriale di banane',
-        //         'age' => '5',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Fenicottero',
-        //         'category_id'=> '2',
-        //         'description' => 'Uccello rosa (volante)',
-        //         'age' => '3',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Coccodrillo',
-        //         'category_id'=> '1',
-        //         'description' => 'Il coccodrillo come fa? Non c\'è nessuno che lo sa',
-        //         'age' => '8',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Elefante',
-        //         'category_id'=> '3',
-        //         'description' => 'Animale enorme con proboscite',
-        //         'age' => '15',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Giraffa',
-        //         'category_id'=> '3',
-        //         'description' => 'Il collo più lungo della savana',
-        //         'age' => '4',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Rinoceronte',
-        //         'category_id'=> '3',
-        //         'description' => 'L\animale più cornificato dello zoo',
-        //         'age' => '10',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Camaleonte',
-        //         'category_id'=> '3',
-        //         'description' => 'Se lo vedi, è già troppo tardi',
-        //         'age' => '2',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Gazzella',
-        //         'category_id'=> '3',
-        //         'description' => 'Ogni mattina, in Africa, una gazzella si alza e sa che deve correre più veloce del leone. Non da RistoZoo.',
-        //         'age' => '6',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Crotalo',
-        //         'category_id'=> '3',
-        //         'description' => 'Non importa che tu sia un crotalo o un pavone, l\'importante è che se muori me lo dici prima',
-        //         'age' => '9',
-        //         'image' => ''
-        //     ],
-        //     [
-        //         'name' => 'Mantide religiosa',
-        //         'category_id'=> '4',
-        //         'description' => 'In realtà non sappiamo se prega o bestemmia',
-        //         'age' => '1',
-        //         'image' => ''
-        //     ],
-        // ]);
     }
 }

@@ -16,6 +16,8 @@
 
     <div class="container mb-5 pb-5">
         <div class="row">
+
+            {{-- FORM INSERIMENTO NUOVO ANIMALE  --}}
             <form method="POST" action="{{route('addAnimal')}}" enctype="multipart/form-data" class="col-12 col-lg-6 ps-lg-0 pe-lg-5">
                 <h3 class="text-center mb-2">Aggiungi animale</h3>
                 @csrf
@@ -46,7 +48,9 @@
                 </div>
                 <button type="submit" class="btn btn-warning offset-3 w-50 mt-4">Registra nuovo animale</button>
             </form>
-            <form method="POST" action="{{route('addCategory')}}" enctype="multipart/form-data" class="col-12 col-lg-6 ps-lg-5 pe-lg-0">
+
+            {{-- FORM INSERIMENTO NUOVA CATEGORIA --}}
+            <form method="POST" action="{{route('addCategory')}}" enctype="multipart/form-data" class="col-12 col-lg-6 ps-lg-5 pe-lg-0 mt-5 pt-5 mt-lg-0 pt-lg-0">
                 <h3 class="text-center mb-2">Aggiungi categoria</h3>
                 @csrf
                 <div class="w-100 text-center mt-4">
