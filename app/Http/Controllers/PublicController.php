@@ -31,8 +31,9 @@ class PublicController extends Controller
     public function allAnimals()
     {
         $allAnimals = Animal::orderBy('created_at', 'DESC')->paginate(16);
+        $allCategories = Category::all();
         
-        return view('allAnimals', compact('allAnimals'));
+        return view('allAnimals', compact('allAnimals', 'allCategories'));
     }
     
     public function contactForm(ContactRequest $request)

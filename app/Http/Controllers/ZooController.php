@@ -15,7 +15,7 @@ class ZooController extends Controller
         $categories = Category::all();
         $animals = Animal::orderBy('created_at', 'DESC')->paginate(16);
         
-        return view('manageZoo');
+        return view('manageZoo', compact('categories'));
     }
 
     public function addAnimal(NewAnimalRequest $request){

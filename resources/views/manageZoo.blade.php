@@ -42,8 +42,13 @@
                 <div class="w-100 text-center mt-4">
                     <label for="newAnimalCategoryInput" class="form-label">Categoria animale</label>
                     <select id="newAnimalCategoryInput" class="form-select" name="category">
-                        {{-- popolato da JS - CAMBIARE CON INSERIMENTO DA CATEGORIE DAL DB --}}
-                        <option value="0">Nessuna categoria presente. Inserisci una nuova categoria.</option>
+                        @if(count($categories)<1)
+                            <option value="0">Nessuna categoria presente. Inserisci una nuova categoria.</option>
+                        @else
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
                 <button type="submit" class="btn btn-warning offset-3 w-50 mt-4">Registra nuovo animale</button>

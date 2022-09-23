@@ -29,21 +29,6 @@ let categories = [
 //SE SONO ALLA PAGINA DI TUTTI GLI ANIMALI
 if(window.location.pathname == '/allAnimals'){
 
-    // Popolazione delle categorie di animali nella allAnimals page
-    let searchSelect = document.querySelector('#categorySearch');
-    let value = 1;
-
-    categories.forEach(category => {
-        let option = document.createElement('option');
-
-        option.setAttribute('value', value);
-        option.innerHTML = category.name;
-
-        searchSelect.appendChild(option);
-        value++;
-    });
-
-
     // Selezione delle card dall'html
     let cards = document.querySelectorAll('.card');
 
@@ -123,24 +108,4 @@ if(window.location.pathname == '/allAnimals'){
             }
         })
     }
-}
-
-//SE SONO ALLA PAGINA MANAGEZOO
-
-if(window.location.pathname == '/manageZoo'){
-
-    // Popolazione delle categorie di animali nella manageZoo page
-    let addAnimalSelect = document.querySelector('#newAnimalCategoryInput');
-    let newValue = 1;
-
-    addAnimalSelect.innerHTML = '';
-    categories.forEach(category => {
-        let option = document.createElement('option');
-
-        option.setAttribute('value', newValue);
-        option.innerHTML = category.name;
-
-        addAnimalSelect.appendChild(option);
-        newValue++;
-    });
 }
