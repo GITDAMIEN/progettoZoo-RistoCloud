@@ -50,15 +50,26 @@ cards.forEach(card => {
 
 //Selezione tasto cerca
 let searchBtn = document.querySelector('#searchBtn');
+let resetBtn = document.querySelector('#resetBtn');
 
 searchBtn.addEventListener('click', ()=>{
     let nameSearched = document.querySelector('#nameSearch').value;
     let descriptionSearched = document.querySelector('#descriptionSearch').value;
     let ageSearched = document.querySelector('#ageSearch').value;
-
+    let categorySearched = document.querySelector('#categorySearch').value;
+    
     searchName(nameSearched);
     searchDescription(descriptionSearched);
     searchAge(ageSearched);
+    // console.log(categorySearched)
+    searchCategory(categorySearched);
+})
+
+resetBtn.addEventListener('click', ()=>{
+    cards.forEach(card=>{
+        card.classList.add('d-block')
+        card.classList.remove('d-none')
+    })
 })
 
 //ricerca per nome
@@ -95,6 +106,19 @@ function searchAge(ageSearched){
         let animalAge = card.children[1].children[3].children[0].innerText
 
         if(animalAge != ageSearched && ageSearched != 0){
+            card.classList.add('d-none')
+            card.classList.remove('d-block')
+        }
+    })
+}
+
+//ricerca per categoria
+function searchCategory(categorySearched){
+    cards.forEach(card=>{
+        let animalCategory = card.children[1].children[1].getAttribute("value")
+
+        // console.log(animalCategory)
+        if(animalCategory != categorySearched && categorySearched != 0){
             card.classList.add('d-none')
             card.classList.remove('d-block')
         }

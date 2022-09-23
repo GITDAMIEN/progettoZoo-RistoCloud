@@ -29,12 +29,13 @@
             <div class="mb-3 col-12 col-md-6 col-lg-3">
                 <label for="categorySearch" class="form-label">Cerca per categoria</label>
                 <select id="categorySearch" class="form-select" aria-label="Default select example">
-                    <option selected>Tutte le categorie</option>
+                    <option value="0" selected>Tutte le categorie</option>
                     {{-- popolato da JS --}}
                 </select>
             </div>
         </div>
         <button type="button" id="searchBtn" class="btn btn-warning w-25 mt-2">Cerca</button>
+        <button type="reset" id="resetBtn" class="btn greyZooBg w-25 mt-2">Reset</button>
     </form>
         
         
@@ -45,7 +46,7 @@
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
                     <h5 class="card-title mt-2">Mucca</h5>
-                    <p class="card-text">Bovino</p>
+                    <p class="card-text" value="1">Bovino</p>
                     <p class="card-text">Detta anche vacca</p>
                     <span id="etaAnimale">Età: <span>4</span> anni</span>
                 </div>
@@ -54,7 +55,7 @@
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
                     <h5 class="card-title mt-2">Gatto</h5>
-                    <p class="card-text">Felino</p>
+                    <p class="card-text" value="2">Felino</p>
                     <p class="card-text">Animale ruffiano e approfittatore</p>
                     <span id="etaAnimale">Età: <span>2</span> anni</span>
                 </div>
@@ -63,7 +64,7 @@
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
                     <h5 class="card-title mt-2">Cavallo</h5>
-                    <p class="card-text">Equino</p>
+                    <p class="card-text" value="3">Equino</p>
                     <p class="card-text">Animale super elegante</p>
                     <span id="etaAnimale">Età: <span>10</span> anni</span>
                 </div>
@@ -72,7 +73,7 @@
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
                     <h5 class="card-title mt-2">Maiale</h5>
-                    <p class="card-text">Suino</p>
+                    <p class="card-text" value="4">Suino</p>
                     <p class="card-text">Non solo un animale</p>
                     <span id="etaAnimale">Età: <span>7</span> anni</span>
                 </div>
@@ -81,7 +82,7 @@
                 <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
                 <div class="card-body">
                     <h5 class="card-title mt-2">Pecorina</h5>
-                    <p class="card-text">Ovino</p>
+                    <p class="card-text" value="5">Ovino</p>
                     <p class="card-text">Non solo un animale</p>
                     <span id="etaAnimale">Età: <span>5</span> anni</span>
                 </div>

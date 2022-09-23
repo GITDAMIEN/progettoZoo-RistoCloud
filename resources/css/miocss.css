@@ -4,6 +4,7 @@
     --blackZoo: #211A1E;
     --redZoo: #C3423F;
     --blueZoo: #22AED1;
+    --greyZoo: #b1b0b0ca;
 }
 
 *{
@@ -25,6 +26,9 @@
 .blueZoo{
     color: var(--blueZoo);
 }
+.greyZoo{
+    color: var(--greyZoo);
+}
 .yellowZooBg{
     background-color: var(--yellowZoo);
 }
@@ -39,6 +43,9 @@
 }
 .blueZooBg{
     background-color: var(--blueZoo);
+}
+.greyZooBg{
+    background-color: var(--greyZoo);
 }
 
 ul > li{
@@ -91,4 +98,8 @@ a{
     top: 15px;
     right: 12px;
     padding: 8px;
+}
+
+#resetBtn:hover{
+    background-color: rgba(220, 221, 222, 0.963);
 }
