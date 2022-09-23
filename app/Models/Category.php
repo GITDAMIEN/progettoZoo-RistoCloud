@@ -16,7 +16,7 @@ class Category extends Model
         return $this->hasMany(Animal::class);
     }
 
-    protected static function newFactory(){
-        return CategoryFactory::new();
-    }
+    // protected static function newFactory(){
+    //     return CategoryFactory::new();
+    // }
 }

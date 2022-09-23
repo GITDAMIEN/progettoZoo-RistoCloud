@@ -30,6 +30,9 @@
             </li>
             @else
             <li class="nav-item">
+              <a class="nav-link" href="{{route('manageZoo')}}">Gestisci zoo</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('frm-logout').submit();">Logout</a>      
               <form id="frm-logout" action="{{route('logout')}}" method="POST" class="d-none">
                 @csrf

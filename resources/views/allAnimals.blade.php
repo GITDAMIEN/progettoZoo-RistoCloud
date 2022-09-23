@@ -1,9 +1,13 @@
 <x-layout>
     
     <x-slot name="title">Tutti gli animali</x-slot>
+    
+    @if(session('message'))
+        <div class="alert alert-success m-0">{{session('message')}}</div>
+    @endif
 
     <h1 id="headerH1" class="text-center p-2 my-5 mx-4 mx-md-auto offset-lg-3">Tutti gli animali di RistoZoo</h1>
-    
+
     {{-- DA ELIMINARE --}}
         @if (count($allAnimals)>0)
             <div class="gZooFont text-center mb-5 fs-1 redZoo">Ci sono animali nel DB da caricare</div>
@@ -28,9 +32,9 @@
             </div>
             <div class="mb-3 col-12 col-md-6 col-lg-3">
                 <label for="categorySearch" class="form-label">Cerca per categoria</label>
-                <select id="categorySearch" class="form-select" aria-label="Default select example">
+                <select id="categorySearch" class="form-select">
                     <option value="0" selected>Tutte le categorie</option>
-                    {{-- popolato da JS --}}
+                    {{-- popolato da JS - CAMBIARE CON INSERIMENTO DA CATEGORIE DAL DB --}}
                 </select>
             </div>
         </div>
