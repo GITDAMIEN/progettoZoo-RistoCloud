@@ -14,6 +14,9 @@
               <a class="nav-link" href="{{route('allAnimals')}}">Tutti gli animali</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{route('allCategories')}}">Tutte le categorie</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{route('aboutUs')}}">Su di noi</a>
             </li>
             <li class="nav-item">

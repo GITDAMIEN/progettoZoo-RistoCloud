@@ -26,7 +26,7 @@ class NewCategoryRequest extends FormRequest
         return [
             'newCategoryName' => 'required|min:4|max:30',
             'newCategoryDescription' => 'required|min:20|max:100',
-            'newCategoryImage' => 'required|image|max:512'
+            'newCategoryImage' => 'image|max:512'
         ];
     }
 
@@ -39,7 +39,7 @@ class NewCategoryRequest extends FormRequest
             'newCategoryDescription.required' => 'La descrizione della categoria è obbligatoria',
             'newCategoryDescription.min' => 'La descrizione della categoria dev\'essere di minimo 20 caratteri',
             'newCategoryDescription.max' => 'La descrizione della categoria dev\'essere di massimo 100 caratteri',
-            'newCategoryImage.required' => 'L\'immagine è obbligatoria',
+            // 'newCategoryImage.required' => 'L\'immagine è obbligatoria',
             'newCategoryImage.image' => 'Il file dev\'essere di tipo immagine (jpg, jpeg, png, bmp, gif, svg, o webp)',
             'newCategoryImage.max' => 'L\'immagine può pesare al massimo 512kb',
         ];

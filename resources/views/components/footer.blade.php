@@ -60,6 +60,9 @@
               <a href="{{route('allAnimals')}}" class="text-reset">Tutti gli animali</a>
             </p>
             <p class="my-1">
+              <a href="{{route('allCategories')}}" class="text-reset">Tutte le categorie</a>
+            </p>
+            <p class="my-1">
               <a href="{{route('aboutUs')}}" class="text-reset">Su di noi</a>
             </p>
             <p class="my-1">

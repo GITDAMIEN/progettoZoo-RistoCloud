@@ -28,7 +28,7 @@ class NewAnimalRequest extends FormRequest
             'newAnimalDescription' => 'required|min:20|max:100',
             'newAnimalAge' => 'required|numeric|min:0|max:150',
             'category' => 'required',
-            'newAnimalImage' => 'required|image|max:512'
+            'newAnimalImage' => 'image|max:512'
         ];
     }
 
@@ -46,7 +46,7 @@ class NewAnimalRequest extends FormRequest
             'newAnimalAge.min' => 'L\'età dell\'animale dev\'essere di minimo 0 anni',
             'newAnimalAge.max' => 'L\'età dell\'animale dev\'essere di massimo 150 anni',
             'category' => 'La categoria dell\'animale è obbligatoria',
-            'newAnimalImage.required' => 'L\'immagine è obbligatoria',
+            // 'newAnimalImage.required' => 'L\'immagine è obbligatoria',
             'newAnimalImage.image' => 'Il file dev\'essere di tipo immagine (jpg, jpeg, png, bmp, gif, svg, o webp)',
             'newAnimalImage.max' => 'L\'immagine può pesare al massimo 512kb',
         ];

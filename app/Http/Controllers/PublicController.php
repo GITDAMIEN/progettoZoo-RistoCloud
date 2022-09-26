@@ -36,6 +36,13 @@ class PublicController extends Controller
         return view('allAnimals', compact('allAnimals', 'allCategories'));
     }
     
+    public function allCategories()
+    {
+        $allCategories = Category::orderBy('created_at', 'DESC')->paginate(16);
+        
+        return view('allCategories', compact('allCategories'));
+    }
+    
     public function contactForm(ContactRequest $request)
     {
         // $request->validate();

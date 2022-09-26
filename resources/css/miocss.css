@@ -92,7 +92,7 @@ a{
 
 #etaAnimale{
     background-color: transparent;
-    border: 1px solid var(--blackZoo);
+    border: 2px solid var(--yellowZoo);
     border-radius: 30px;
     position: absolute;
     top: 15px;
@@ -102,4 +102,8 @@ a{
 
 #resetBtn:hover{
     background-color: rgba(220, 221, 222, 0.963);
+}
+
+#cardsContainer > nav > div{
+    justify-content: center;
 }

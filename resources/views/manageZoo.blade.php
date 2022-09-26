@@ -38,10 +38,9 @@
                     <input id="newAnimalImageInput" type="file" class="form-control" name="newAnimalImage" value="{{old('newAnimalImage')}}">
                 </div>
 
-                {{-- DA CAMBIARE!! FAR RIEMPIRE CON CATEGORIE DAL DB - AL MOMENTO RIEMPITO DA JS --}}
                 <div class="w-100 text-center mt-4">
                     <label for="newAnimalCategoryInput" class="form-label">Categoria animale</label>
-                    <select id="newAnimalCategoryInput" class="form-select" name="category">
+                    <select id="newAnimalCategoryInput" class="form-select" name="category" value="{{old("category")}}">
                         @if(count($categories)<1)
                             <option value="0">Nessuna categoria presente. Inserisci una nuova categoria.</option>
                         @else

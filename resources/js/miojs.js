@@ -108,4 +108,15 @@ if(window.location.pathname == '/allAnimals'){
             }
         })
     }
+
+    // CENTRARE NAVIGATION LINKS
+    let cardsContainerNav = document.querySelector("#cardsContainer nav");
+
+    cardsContainerNav.getElementsByTagName('div')[0].classList.remove('justify-content-between');
+    cardsContainerNav.getElementsByTagName('div')[0].classList.add('justify-content-center');
+
+    cardsContainerNav.getElementsByTagName('div')[1].classList.remove('justify-content-sm-between');
+    cardsContainerNav.getElementsByTagName('div')[1].classList.add('justify-content-sm-center');
+
+    cardsContainerNav.getElementsByTagName('div')[1].removeChild(cardsContainerNav.getElementsByTagName('div')[1].getElementsByTagName('div')[0]);
 }

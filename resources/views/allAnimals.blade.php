@@ -45,58 +45,12 @@
         </form>
         
         {{-- CARDS DEGLI ANIMALI --}}
-        <div class="container">
+        <div id="cardsContainer" class="container">
             <div class="animalCards row justify-content-center mb-5">
-                
-                {{-- <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
-                    <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
-                    <div class="card-body">
-                        <h5 class="card-title mt-2">Mucca</h5>
-                        <p class="card-text" value="1">Bovino</p>
-                        <p class="card-text">Detta anche vacca</p>
-                        <span id="etaAnimale">Età: <span>4</span> anni</span>
-                    </div>
-                </div>
-                <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
-                    <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
-                    <div class="card-body">
-                        <h5 class="card-title mt-2">Gatto</h5>
-                        <p class="card-text" value="2">Felino</p>
-                        <p class="card-text">Animale ruffiano e approfittatore</p>
-                        <span id="etaAnimale">Età: <span>2</span> anni</span>
-                    </div>
-                </div>
-                <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
-                    <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
-                    <div class="card-body">
-                        <h5 class="card-title mt-2">Cavallo</h5>
-                        <p class="card-text" value="3">Equino</p>
-                        <p class="card-text">Animale super elegante</p>
-                        <span id="etaAnimale">Età: <span>10</span> anni</span>
-                    </div>
-                </div>
-                <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
-                    <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
-                    <div class="card-body">
-                        <h5 class="card-title mt-2">Maiale</h5>
-                        <p class="card-text" value="4">Suino</p>
-                        <p class="card-text">Non solo un animale</p>
-                        <span id="etaAnimale">Età: <span>7</span> anni</span>
-                    </div>
-                </div>
-                <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
-                    <img src="https://via.placeholder.com/150x100" class="card-img-top" alt="Immagine di animale">
-                    <div class="card-body">
-                        <h5 class="card-title mt-2">Pecorina</h5>
-                        <p class="card-text" value="5">Ovino</p>
-                        <p class="card-text">Non solo un animale</p>
-                        <span id="etaAnimale">Età: <span>5</span> anni</span>
-                    </div>
-                </div> --}}
 
                 @foreach($allAnimals as $animal)
                     <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
-                        <img src="{{Storage::url($animal->image)}}" class="card-img-top" alt="Immagine di animale">
+                        <img src="{{$animal->image ? Storage::url($animal->image) : "storage/images/ImagePlaceholder.png"}}" class="card-img-top" alt="Immagine di animale">
                         <div class="card-body">
                             <h5 class="card-title mt-2">{{$animal->name}}</h5>
                             <p class="card-text" value="{{$animal->category_id}}">{{$animal->category->name}}</p>
