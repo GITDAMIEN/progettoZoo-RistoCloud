@@ -38,7 +38,7 @@ class PublicController extends Controller
     
     public function contactForm(ContactRequest $request)
     {
-        $request->validate();
+        // $request->validate();
         
         Mail::to($request->email)->send(new ThanksMail($request));
         Mail::to('amministrazione@ristozoo.it')->send(new ContactMail($request));

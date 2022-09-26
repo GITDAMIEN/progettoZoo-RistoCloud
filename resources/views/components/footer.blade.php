@@ -35,7 +35,7 @@
   
     <!-- Section: Links  -->
     <section class="">
-      <div class="container text-center text-md-start my-5">
+      <div class="container-fluid text-center text-md-start my-5">
         <!-- Grid row -->
         <div class="row my-3 align-items-center">
           <!-- Grid column -->
@@ -71,7 +71,7 @@
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4 mt-3 mt-lg-0">Contatti</h6>
+            <h6 class="text-uppercase fw-bold mb-4 mt-3 mt-md-0">Contatti</h6>
             <a href="https://www.google.com/maps/place/Ristocloud+Group+S.r.l./@45.4400035,10.6876826,15z/data=!4m2!3m1!1s0x0:0x4ff595f4dac578b1?sa=X&ved=2ahUKEwj1qpel7KX6AhWP_rsIHVKTCXEQ_BJ6BAhEEAU"><i class="fas fa-home me-3"></i> Via Risorgimento, 20 <br>37019 Peschiera del Garda VR</a><br>
             <a href="mailto:info@ristocloudgroup.com">
               <i class="fas fa-envelope me-3"></i>
