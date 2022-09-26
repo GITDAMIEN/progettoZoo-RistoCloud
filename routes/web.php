@@ -20,6 +20,7 @@ Route::get('/aboutUs', [PublicController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/contactUs', [PublicController::class, 'contactUs'])->name('contactUs');
 Route::get('/allAnimals', [PublicController::class, 'allAnimals'])->name('allAnimals');
 Route::get('/allCategories', [PublicController::class, 'allCategories'])->name('allCategories');
+Route::get('/animalDetails/{animal}', [PublicController::class, 'animalDetails'])->name('animalDetails');
 Route::post('/contactForm', [PublicController::class, 'contactForm'])->name('contactForm');
 
 Route::get('/manageZoo', [ZooController::class, 'manageZoo'])->middleware('auth')->name('manageZoo');

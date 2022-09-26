@@ -109,6 +109,10 @@ if(window.location.pathname == '/allAnimals'){
         })
     }
 
+}
+
+if(window.location.pathname == '/allAnimals' || window.location.pathname == '/allCategories'){
+
     // CENTRARE NAVIGATION LINKS
     let cardsContainerNav = document.querySelector("#cardsContainer nav");
 

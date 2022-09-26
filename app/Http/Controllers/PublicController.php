@@ -43,6 +43,11 @@ class PublicController extends Controller
         return view('allCategories', compact('allCategories'));
     }
     
+    public function animalDetails(Animal $animal)
+    {        
+        return view('animalDetails', compact('animal'));
+    }
+    
     public function contactForm(ContactRequest $request)
     {
         // $request->validate();
