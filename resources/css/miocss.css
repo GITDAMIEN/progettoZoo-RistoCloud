@@ -2,7 +2,7 @@
     --yellowZoo: #F2BB05;
     --greenZoo: #4DA167;
     --blackZoo: #211A1E;
-    --redZoo: #C3423F;
+    --redZoo: #e9413e;
     --blueZoo: #22AED1;
     --greyZoo: #b1b0b0ca;
 }
@@ -102,4 +102,23 @@ a{
 
 #resetBtn:hover{
     background-color: rgba(220, 221, 222, 0.963);
+}
+
+#modifyModeBtn{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#modifyModeBtn:hover{
+    background-color: var(--yellowZoo);
+    box-shadow: 0px 0px 8px 2px var(--redZoo);
+}
+
+#modifyIcons{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 20px;
+    padding: 0px 6px;
 }

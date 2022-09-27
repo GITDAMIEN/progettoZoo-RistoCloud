@@ -33,7 +33,7 @@
             </li>
             @else
             <li class="nav-item">
-              <a class="nav-link" href="{{route('manageZoo')}}">Gestisci zoo</a>
+              <a class="nav-link me-lg-3" href="{{route('enlargeZoo')}}">Aggiungi animali o categorie</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('frm-logout').submit();">Logout</a>      

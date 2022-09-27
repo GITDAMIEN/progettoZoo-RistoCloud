@@ -15,6 +15,8 @@ use App\Http\Controllers\PublicController;
 |
 */
 
+
+// PUBLIC CONTROLLER
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
 Route::get('/aboutUs', [PublicController::class, 'aboutUs'])->name('aboutUs');
 Route::get('/contactUs', [PublicController::class, 'contactUs'])->name('contactUs');
@@ -23,6 +25,10 @@ Route::get('/allCategories', [PublicController::class, 'allCategories'])->name('
 Route::get('/animalDetails/{animal}', [PublicController::class, 'animalDetails'])->name('animalDetails');
 Route::post('/contactForm', [PublicController::class, 'contactForm'])->name('contactForm');
 
-Route::get('/manageZoo', [ZooController::class, 'manageZoo'])->middleware('auth')->name('manageZoo');
+// ZOO CONTROLLER
+Route::get('/enlargeZoo', [ZooController::class, 'enlargeZoo'])->middleware('auth')->name('enlargeZoo');
 Route::post('/addAnimal', [ZooController::class, 'addAnimal'])->middleware('auth')->name('addAnimal');
 Route::post('/addCategory', [ZooController::class, 'addCategory'])->middleware('auth')->name('addCategory');
+Route::get('/editAnimal/{animal}', [ZooController::class, 'editAnimal'])->middleware('auth')->name('editAnimal');
+Route::put('/confirmAnimalEdit/{animal}', [ZooController::class, 'confirmAnimalEdit'])->middleware('auth')->name('confirmAnimalEdit');
+Route::delete('/deleteAnimal/{animal}', [ZooController::class, 'deleteAnimal'])->middleware('auth')->name('deleteAnimal');

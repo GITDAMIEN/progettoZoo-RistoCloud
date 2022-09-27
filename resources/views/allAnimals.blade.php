@@ -8,10 +8,15 @@
 
     <h1 id="headerH1" class="text-center p-2 my-5 mx-4 mx-md-auto offset-lg-3">Tutti gli animali di RistoZoo</h1>
 
+    @auth    
+        {{-- BOTTONE PER MODALITA' DI MODIFICA --}}
+        <button id="modifyModeBtn" class="btn redZooBg mb-4" onclick="switchMod()"><i class="fa-solid fa-pen me-3"></i>Modalità modifica: <span id="modSpan">OFF</span></button>
+    @endauth
+
     @if (count($allAnimals)<1)
         <div class="row">
             <div class="gZooFont text-center mb-5 fs-1 redZoo">Nessun animale disponibile!</div>
-            <a class="btn btn-warning w-50 offset-3" href="{{route('manageZoo')}}">Inserisci tu il primo animale!</a>
+            <a class="btn btn-warning w-50 offset-3" href="{{route('enlargeZoo')}}">Inserisci tu il primo animale!</a>
         </div>
     @else
             
@@ -62,6 +67,32 @@
                                 <span id="etaAnimale">Età: <span>{{$animal->age}}</span> anni</span>
                             </div>
                         </a>
+                        <div id="modifyIcons" class="d-none redZooBg d-flex align-items-center">
+
+                            {{-- TASTO MODIFICA ANIMALE --}}
+                            <a href="{{route('editAnimal', $animal)}}" class="mx-2">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            
+                            {{-- TASTO ELIMINA ANIMALE --}}
+                            <form id="deleteAnimalForm" method="POST" action="{{route('deleteAnimal', $animal)}}" class="">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+                            
+                            {{-- TASTO ELIMINA ANIMALE CON MODALE --}}
+                            {{-- <form id="deleteAnimalForm" method="POST" action="{{route('deleteAnimal', $animal)}}" class="">
+                                @csrf
+                                @method('delete')
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteAnimalModal">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form> --}}
+                            
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -69,4 +100,39 @@
         </div>
     @endif
 
+    <!-- MODALE CONFERMA ELIMINAZIONE ANIMALE -->
+    {{-- <div class="modal fade" id="deleteAnimalModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteAnimalModalLabel">Conferma eliminazione</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confermi di voler eliminare {{$animal->name}}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="submit" form="deleteAnimalForm" class="btn btn-danger">Elimina</button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <script>
+        let mod = false;
+        let modSpan = document.querySelector('#modSpan');
+        let cards = document.querySelectorAll('.card');
+
+        function switchMod(){
+            mod = !mod;
+            modSpan.innerHTML = mod ? 'ON' : 'OFF';
+
+            cards.forEach(card => {
+                card.children[1].classList.toggle('d-none');
+                card.children[1].classList.toggle('d-block');
+            });
+        }
+
+    </script>
 </x-layout>

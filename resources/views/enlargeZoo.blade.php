@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-slot name="title">Gestisci zoo</x-slot>
+    <x-slot name="title">Aggiungi</x-slot>
 
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -12,7 +12,7 @@
     </div>
     @endif
 
-    <h1 id="headerH1" class="text-center p-2 my-5 mx-4 mx-md-auto offset-lg-3">Gestisci lo zoo RistoZoo</h1>
+    <h1 id="headerH1" class="text-center p-2 my-5 mx-4 mx-md-auto offset-lg-3">Aggiungi</h1>
 
     <div class="container mb-5 pb-5">
         <div class="row">
@@ -23,19 +23,19 @@
                 @csrf
                 <div class="w-100 text-center mt-4">
                     <label for="newAnimalNameInput" class="form-label">Nome animale</label>
-                    <input id="newAnimalNameInput" type="text" class="form-control" name="newAnimalName" placeholder="Nome animale" value="{{old('newAnimalName')}}">
+                    <input id="newAnimalNameInput" type="text" class="form-control" name="animalName" placeholder="Nome animale" value="{{old('animalName')}}">
                 </div>
                 <div class="w-100 text-center mt-4">
                     <label for="newAnimalDescriptionInput" class="form-label">Descrizione animale</label>
-                    <textarea name="newAnimalDescription" id="newAnimalDescriptionInput"  class="form-control" cols="30" rows="6" placeholder="Descrizione animale" value="{{old('newAnimalDescription')}}"></textarea>
+                    <textarea name="animalDescription" id="newAnimalDescriptionInput"  class="form-control" cols="30" rows="6" placeholder="Descrizione animale">{{old('animalDescription')}}</textarea>
                 </div>
                 <div class="w-100 text-center mt-4">
                     <label for="newAnimalAgeInput" class="form-label">Età animale</label>
-                    <input id="newAnimalAgeInput" type="number" class="form-control" name="newAnimalAge" placeholder="Età animale" value="{{old('newAnimalAge')}}">
+                    <input id="newAnimalAgeInput" type="number" class="form-control" name="animalAge" placeholder="Età animale" value="{{old('animalAge')}}">
                 </div>
                 <div class="w-100 text-center mt-4">
                     <label for="newAnimalImageInput" class="form-label">Immagine animale</label>
-                    <input id="newAnimalImageInput" type="file" class="form-control" name="newAnimalImage" value="{{old('newAnimalImage')}}">
+                    <input id="newAnimalImageInput" type="file" class="form-control" name="animalImage" value="{{old('animalImage')}}">
                 </div>
 
                 <div class="w-100 text-center mt-4">
