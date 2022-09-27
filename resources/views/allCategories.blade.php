@@ -35,13 +35,13 @@
                         </a>
                         <div id="modifyIcons" class="d-none redZooBg d-flex align-items-center">
 
-                            {{-- TASTO MODIFICA ANIMALE --}}
+                            {{-- TASTO MODIFICA CATEGORIA --}}
                             <a href="{{route('editAnimal', $category)}}" class="mx-2">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
                             
-                            {{-- TASTO ELIMINA ANIMALE --}}
-                            <form id="deleteAnimalForm" method="POST" action="{{route('deleteAnimal', $category)}}" class="">
+                            {{-- TASTO ELIMINA CATEGORIA --}}
+                            <form id="deleteCategoryForm" method="POST" action="{{route('deleteCategory', $category)}}" class="">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn">
@@ -49,11 +49,11 @@
                                 </button>
                             </form>
                             
-                            {{-- TASTO ELIMINA ANIMALE CON MODALE --}}
-                            {{-- <form id="deleteAnimalForm" method="POST" action="{{route('deleteAnimal', $animal)}}" class="">
+                            {{-- TASTO ELIMINA CATEGORIA CON MODALE --}}
+                            {{-- <form id="deleteCategoryForm" method="POST" action="{{route('deleteCategory', $category)}}" class="">
                                 @csrf
                                 @method('delete')
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteAnimalModal">
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteCategoryModal">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
                             </form> --}}
@@ -65,6 +65,25 @@
             {{$allCategories->links()}}
         </div>
     @endif
+
+    <!-- MODALE CONFERMA ELIMINAZIONE CATEGORIA -->
+    {{-- <div class="modal fade" id="deleteCategoryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteCategoryModalLabel">Conferma eliminazione</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confermi di voler eliminare {{$category->name}}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="submit" form="deleteCategoryForm" class="btn btn-danger">Elimina</button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
 
 
     <script>

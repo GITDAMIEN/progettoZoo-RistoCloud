@@ -32,3 +32,4 @@ Route::post('/addCategory', [ZooController::class, 'addCategory'])->middleware('
 Route::get('/editAnimal/{animal}', [ZooController::class, 'editAnimal'])->middleware('auth')->name('editAnimal');
 Route::put('/confirmAnimalEdit/{animal}', [ZooController::class, 'confirmAnimalEdit'])->middleware('auth')->name('confirmAnimalEdit');
 Route::delete('/deleteAnimal/{animal}', [ZooController::class, 'deleteAnimal'])->middleware('auth')->name('deleteAnimal');
+Route::delete('/deleteCategory/{category}', [ZooController::class, 'deleteCategory'])->middleware('auth')->name('deleteCategory');

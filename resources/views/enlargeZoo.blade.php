@@ -63,7 +63,7 @@
                 </div>
                 <div class="w-100 text-center mt-4">
                     <label for="newCategoryDescriptionInput" class="form-label">Descrizione categoria</label>
-                    <textarea name="newCategoryDescription" id="newCategoryDescriptionInput"  class="form-control" cols="30" rows="6" placeholder="Descrizione categoria" value="{{old('newCategoryDescription')}}"></textarea>
+                    <textarea name="newCategoryDescription" id="newCategoryDescriptionInput"  class="form-control" cols="30" rows="6" placeholder="Descrizione categoria">{{old('newCategoryDescription')}}</textarea>
                 </div>
                 <div class="w-100 text-center mt-4">
                     <label for="newCategoryImageInput" class="form-label">Immagine categoria</label>

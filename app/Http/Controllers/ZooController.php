@@ -27,7 +27,7 @@ class ZooController extends Controller
             "category_id" => $request->input("category"),
         ]);
 
-        return redirect()->route('allAnimals')->with('message', 'Hai inserito correttamente il nuovo animale');
+        return redirect()->route('allAnimals')->with('message', 'Animale aggiunto correttamente');
     }
 
     public function addCategory(NewCategoryRequest $request){
@@ -38,7 +38,7 @@ class ZooController extends Controller
             "image" => $request->file("newCategoryImage") ? $request->file("newCategoryImage")->store("public/images") : NULL,
         ]);
 
-        return redirect()->route('allAnimals')->with('message', 'Hai inserito correttamente la nuova categoria');
+        return redirect()->route('allCategories')->with('message', 'Categoria aggiunta correttamente');
     }
 
     public function editAnimal(Animal $animal){
@@ -65,5 +65,12 @@ class ZooController extends Controller
         $animal->delete();
         
         return redirect()->route('allAnimals')->with('message', 'Animale eliminato correttamente');
+    }
+
+    public function deleteCategory(Category $category){
+
+        $category->delete();
+        
+        return redirect()->route('allCategories')->with('message', 'Categoria eliminata correttamente');
     }
 }
