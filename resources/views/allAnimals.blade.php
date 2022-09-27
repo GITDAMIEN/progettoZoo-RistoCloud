@@ -28,7 +28,10 @@
                 </div>
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="ageSearch" class="form-label">Cerca per età (numero)</label>
-                    <input type="number" class="form-control" id="ageSearch" placeholder="Cerca per età">
+                    <div id="ageSearch" class="d-flex">
+                        <input type="number" class="form-control w-50 me-1" placeholder="Età minima">
+                        <input type="number" class="form-control w-50 ms-1" placeholder="Età massima">
+                    </div>
                 </div>
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="categorySearch" class="form-label">Cerca per categoria</label>

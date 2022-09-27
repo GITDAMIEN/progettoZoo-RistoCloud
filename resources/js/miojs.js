@@ -39,9 +39,11 @@ if(window.location.pathname == '/allAnimals'){
     searchBtn.addEventListener('click', ()=>{
         let nameSearched = document.querySelector('#nameSearch').value;
         let descriptionSearched = document.querySelector('#descriptionSearch').value;
-        let ageSearched = document.querySelector('#ageSearch').value;
+        let ageSearched = document.querySelector('#ageSearch');
         let categorySearched = document.querySelector('#categorySearch').value;
         
+        // console.log(ageSearched);
+
         searchName(nameSearched);
         searchDescription(descriptionSearched);
         searchAge(ageSearched);
@@ -59,7 +61,7 @@ if(window.location.pathname == '/allAnimals'){
     //ricerca per nome
     function searchName(nameSearched){
         cards.forEach(card=>{
-            let animalName = card.children[1].children[0].innerText
+            let animalName = card.children[0].children[1].children[0].innerText
 
             if(animalName.includes(nameSearched)){
                 card.classList.add('d-block')
@@ -75,7 +77,7 @@ if(window.location.pathname == '/allAnimals'){
     //ricerca per descrizione
     function searchDescription(descriptionSearched){
         cards.forEach(card=>{
-            let animalDescription = card.children[1].children[2].innerText
+            let animalDescription = card.children[0].children[1].children[2].innerText
 
             if(! animalDescription.includes(descriptionSearched)){
                 card.classList.add('d-none')
@@ -87,9 +89,15 @@ if(window.location.pathname == '/allAnimals'){
     //ricerca per età
     function searchAge(ageSearched){
         cards.forEach(card=>{
-            let animalAge = card.children[1].children[3].children[0].innerText
+            let animalAge = card.children[0].children[1].children[3].children[0].innerText
+            let minSearched = ageSearched.children[0].value;
+            let maxSearched = ageSearched.children[1].value;
 
-            if(animalAge != ageSearched && ageSearched != 0){
+            // console.log("Età effettiva: " + animalAge);
+            // console.log("Minimo cercato: " + minSearched);
+            // console.log("Massimo cercato: " + maxSearched);
+
+            if((minSearched && animalAge < minSearched) || (maxSearched && animalAge > maxSearched)){
                 card.classList.add('d-none')
                 card.classList.remove('d-block')
             }
@@ -99,7 +107,7 @@ if(window.location.pathname == '/allAnimals'){
     //ricerca per categoria
     function searchCategory(categorySearched){
         cards.forEach(card=>{
-            let animalCategory = card.children[1].children[1].getAttribute("value")
+            let animalCategory = card.children[0].children[1].children[1].getAttribute("value")
 
             // console.log(animalCategory)
             if(animalCategory != categorySearched && categorySearched != 0){
@@ -107,6 +115,14 @@ if(window.location.pathname == '/allAnimals'){
                 card.classList.remove('d-block')
             }
         })
+    }
+
+    //autosettaggio categoria se presente come parametor nell'url
+    let urlParams = new URLSearchParams(window.location.search);
+
+    if(urlParams.get('category')){
+        document.querySelector('#categorySearch').value = urlParams.get('category');
+        searchCategory(urlParams.get('category'));
     }
 
 }

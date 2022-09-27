@@ -103,7 +103,3 @@ a{
 #resetBtn:hover{
     background-color: rgba(220, 221, 222, 0.963);
 }
-
-#cardsContainer > nav > div{
-    justify-content: center;
-}

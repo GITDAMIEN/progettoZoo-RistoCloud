@@ -21,11 +21,13 @@
 
                 @foreach($allCategories as $category)
                     <div class="card mb-5 mx-3 px-0 col-12 col-md-4 col-lg-3" style="width: 18rem;">
-                        <img src="{{$category->image ? Storage::url($category->image) : "storage/images/ImagePlaceholder.png"}}" class="card-img-top" alt="Immagine della categoria">
-                        <div class="card-body">
-                            <h5 class="card-title mt-2">{{$category->name}}</h5>
-                            <p class="card-text">{{$category->description}}</p>
-                        </div>
+                        <a href="{{route('allAnimals', ['category' => $category])}}">
+                            <img src="{{$category->image ? Storage::url($category->image) : "storage/images/ImagePlaceholder.png"}}" class="card-img-top" alt="Immagine della categoria">
+                            <div class="card-body">
+                                <h5 class="card-title mt-2">{{$category->name}}</h5>
+                                <p class="card-text">{{$category->description}}</p>
+                            </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
