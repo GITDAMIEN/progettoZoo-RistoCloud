@@ -10,8 +10,7 @@
 
     <div class="justify-content-center d-flex mt-5 pt-5">
         <div class="card mb-5 mx-3 px-0" style="width: 30rem;">
-            {{-- @dump($animal->image) --}}
-            <img src="{{$animal->image ? Storage::url($animal->image) : "storage/images/ImagePlaceholder.png"}}" class="card-img-top" alt="Immagine di animale">
+            <img src="{{$animal->image ? Storage::url($animal->image) : "../storage/images/ImagePlaceholder.png"}}" class="card-img-top" alt="Immagine di animale">
             <div class="card-body">
                 <h5 class="card-title mt-2">{{$animal->name}}</h5>
                 <p class="card-text" value="{{$animal->category_id}}">{{$animal->category->name}}</p>
