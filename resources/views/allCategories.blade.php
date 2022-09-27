@@ -36,7 +36,7 @@
                         <div id="modifyIcons" class="d-none redZooBg d-flex align-items-center">
 
                             {{-- TASTO MODIFICA CATEGORIA --}}
-                            <a href="{{route('editAnimal', $category)}}" class="mx-2">
+                            <a href="{{route('editCategory', $category)}}" class="mx-2">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
                             

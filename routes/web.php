@@ -30,6 +30,8 @@ Route::get('/enlargeZoo', [ZooController::class, 'enlargeZoo'])->middleware('aut
 Route::post('/addAnimal', [ZooController::class, 'addAnimal'])->middleware('auth')->name('addAnimal');
 Route::post('/addCategory', [ZooController::class, 'addCategory'])->middleware('auth')->name('addCategory');
 Route::get('/editAnimal/{animal}', [ZooController::class, 'editAnimal'])->middleware('auth')->name('editAnimal');
+Route::get('/editCategory/{category}', [ZooController::class, 'editCategory'])->middleware('auth')->name('editCategory');
 Route::put('/confirmAnimalEdit/{animal}', [ZooController::class, 'confirmAnimalEdit'])->middleware('auth')->name('confirmAnimalEdit');
+Route::put('/confirmCategoryEdit/{category}', [ZooController::class, 'confirmCategoryEdit'])->middleware('auth')->name('confirmCategoryEdit');
 Route::delete('/deleteAnimal/{animal}', [ZooController::class, 'deleteAnimal'])->middleware('auth')->name('deleteAnimal');
 Route::delete('/deleteCategory/{category}', [ZooController::class, 'deleteCategory'])->middleware('auth')->name('deleteCategory');

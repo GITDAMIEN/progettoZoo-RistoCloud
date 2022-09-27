@@ -6,7 +6,7 @@ use App\Models\Animal;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\AnimalRequest;
-use App\Http\Requests\NewCategoryRequest;
+use App\Http\Requests\CategoryRequest;
 
 class ZooController extends Controller
 {
@@ -30,12 +30,12 @@ class ZooController extends Controller
         return redirect()->route('allAnimals')->with('message', 'Animale aggiunto correttamente');
     }
 
-    public function addCategory(NewCategoryRequest $request){
+    public function addCategory(CategoryRequest $request){
 
         $category = Category::create([
-            "name" => $request->input("newCategoryName"),
-            "description" => $request->input("newCategoryDescription"),
-            "image" => $request->file("newCategoryImage") ? $request->file("newCategoryImage")->store("public/images") : NULL,
+            "name" => $request->input("categoryName"),
+            "description" => $request->input("categoryDescription"),
+            "image" => $request->file("categoryImage") ? $request->file("categoryImage")->store("public/images") : NULL,
         ]);
 
         return redirect()->route('allCategories')->with('message', 'Categoria aggiunta correttamente');
@@ -48,6 +48,11 @@ class ZooController extends Controller
         return view('editAnimal', compact('animal', 'categories'));
     }
 
+    public function editCategory(Category $category){
+
+        return view('editCategory', compact('category'));
+    }
+
     public function confirmAnimalEdit(Animal $animal, AnimalRequest $request){
 
         $animal->name = $request->input('animalName');
@@ -58,6 +63,16 @@ class ZooController extends Controller
         $animal->save();
 
         return redirect()->route('animalDetails', compact('animal'))->with('message', 'Animale modificato correttamente');
+    }
+
+    public function confirmCategoryEdit(Category $category, CategoryRequest $request){
+
+        $category->name = $request->input('categoryName');
+        $category->description = $request->input('categoryDescription');
+        $category->image = $request->file("categoryImage") ? $request->file("categoryImage")->store("public/images") : NULL;
+        $category->save();
+
+        return redirect()->route('allCategories')->with('message', 'Categoria modificata correttamente');
     }
 
     public function deleteAnimal(Animal $animal){

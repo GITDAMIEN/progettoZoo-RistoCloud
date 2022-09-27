@@ -12,7 +12,7 @@
     </div>
     @endif
 
-    <h1 id="headerH1" class="text-center p-2 my-5 mx-4 mx-md-auto offset-lg-3">Aggiungi</h1>
+    <h1 id="headerH1" class="text-center p-2 my-5 mx-4 mx-md-auto offset-lg-3">Aggiungi su RistoZoo</h1>
 
     <div class="container mb-5 pb-5">
         <div class="row">
@@ -59,15 +59,15 @@
                 @csrf
                 <div class="w-100 text-center mt-4">
                     <label for="newCategoryNameInput" class="form-label">Nome categoria</label>
-                    <input id="newCategoryNameInput" type="text" class="form-control" name="newCategoryName" placeholder="Nome categoria" value="{{old('newCategoryName')}}">
+                    <input id="newCategoryNameInput" type="text" class="form-control" name="categoryName" placeholder="Nome categoria" value="{{old('categoryName')}}">
                 </div>
                 <div class="w-100 text-center mt-4">
                     <label for="newCategoryDescriptionInput" class="form-label">Descrizione categoria</label>
-                    <textarea name="newCategoryDescription" id="newCategoryDescriptionInput"  class="form-control" cols="30" rows="6" placeholder="Descrizione categoria">{{old('newCategoryDescription')}}</textarea>
+                    <textarea name="categoryDescription" id="newCategoryDescriptionInput"  class="form-control" cols="30" rows="6" placeholder="Descrizione categoria">{{old('categoryDescription')}}</textarea>
                 </div>
                 <div class="w-100 text-center mt-4">
                     <label for="newCategoryImageInput" class="form-label">Immagine categoria</label>
-                    <input id="newCategoryImageInput" type="file" class="form-control" name="newCategoryImage" value="{{old('newCategoryImage')}}">
+                    <input id="newCategoryImageInput" type="file" class="form-control" name="categoryImage" value="{{old('categoryImage')}}">
                 </div>
 
                 <button type="submit" class="btn btn-warning offset-3 w-50 mt-4">Registra nuova categoria</button>
