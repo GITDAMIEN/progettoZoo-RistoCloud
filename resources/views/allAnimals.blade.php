@@ -96,7 +96,7 @@
                     </div>
                 @endforeach
             </div>
-            {{$allAnimals->links()}}
+            {{-- {{$allAnimals->links()}} --}}
         </div>
     @endif
 

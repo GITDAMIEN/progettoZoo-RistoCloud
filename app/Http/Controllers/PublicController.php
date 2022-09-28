@@ -30,16 +30,17 @@ class PublicController extends Controller
     
     public function allAnimals()
     {
-        $allAnimals = Animal::orderBy('created_at', 'DESC')->paginate(16);
+        // $allAnimals = Animal::orderBy('created_at', 'DESC')->paginate(16);
+        $allAnimals = Animal::all();
         $allCategories = Category::all();
-        $modifyMod = false;
         
-        return view('allAnimals', compact('allAnimals', 'allCategories', 'modifyMod'));
+        return view('allAnimals', compact('allAnimals', 'allCategories'));
     }
     
     public function allCategories()
     {
-        $allCategories = Category::orderBy('created_at', 'DESC')->paginate(16);
+        // $allCategories = Category::orderBy('created_at', 'DESC')->paginate(16);
+        $allCategories = Category::all();
         
         return view('allCategories', compact('allCategories'));
     }

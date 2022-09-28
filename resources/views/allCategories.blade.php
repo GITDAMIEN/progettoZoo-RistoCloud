@@ -62,7 +62,7 @@
                     </div>
                 @endforeach
             </div>
-            {{$allCategories->links()}}
+            {{-- {{$allCategories->links()}} --}}
         </div>
     @endif
 
