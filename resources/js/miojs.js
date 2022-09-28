@@ -15,6 +15,7 @@ if(window.location.pathname == '/allAnimals'){
         let categorySearched = document.querySelector('#categorySearch').value;
         
         // console.log(ageSearched);
+        // console.log(nameSearched);
 
         searchName(nameSearched);
         searchDescription(descriptionSearched);
@@ -33,7 +34,7 @@ if(window.location.pathname == '/allAnimals'){
     //ricerca per nome
     function searchName(nameSearched){
         animalCards.forEach(card=>{
-            let animalName = card.children[0].children[1].children[0].innerText
+            let animalName = card.children[0].children[1].children[0].innerText.toLowerCase();
 
             if(animalName.includes(nameSearched)){
                 card.classList.add('d-block')
@@ -49,7 +50,7 @@ if(window.location.pathname == '/allAnimals'){
     //ricerca per descrizione
     function searchDescription(descriptionSearched){
         animalCards.forEach(card=>{
-            let animalDescription = card.children[0].children[1].children[2].innerText
+            let animalDescription = card.children[0].children[1].children[2].innerText.toLowerCase();
 
             if(! animalDescription.includes(descriptionSearched)){
                 card.classList.add('d-none')
