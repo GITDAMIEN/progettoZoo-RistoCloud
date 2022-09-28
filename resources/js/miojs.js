@@ -9,8 +9,8 @@ if(window.location.pathname == '/allAnimals'){
     let resetBtn = document.querySelector('#resetBtn');
 
     searchBtn.addEventListener('click', ()=>{
-        let nameSearched = document.querySelector('#nameSearch').value;
-        let descriptionSearched = document.querySelector('#descriptionSearch').value;
+        let nameSearched = document.querySelector('#nameSearch').value.toLowerCase();
+        let descriptionSearched = document.querySelector('#descriptionSearch').value.toLowerCase();
         let ageSearched = document.querySelector('#ageSearch');
         let categorySearched = document.querySelector('#categorySearch').value;
         
@@ -61,9 +61,9 @@ if(window.location.pathname == '/allAnimals'){
     //ricerca per età
     function searchAge(ageSearched){
         animalCards.forEach(card=>{
-            let animalAge = card.children[0].children[1].children[3].children[0].innerText
-            let minSearched = ageSearched.children[0].value;
-            let maxSearched = ageSearched.children[1].value;
+            let animalAge = Number(card.children[0].children[1].children[3].children[0].innerText)
+            let minSearched = Number(ageSearched.children[0].value);
+            let maxSearched = Number(ageSearched.children[1].value);
 
             // console.log("Età effettiva: " + animalAge);
             // console.log("Minimo cercato: " + minSearched);

@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    container_name: mysql_zoo
+    environment: 
+      - MYSQL_ROOT_PASSWORD=ristocloud
+      - MYSQL_DATABASE=zooDB
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=ristocloud
+    volumes:
+      - "./mysql_data:/var/lib/mysql:delegated"
+    ports:
+      - "33060:3306"
