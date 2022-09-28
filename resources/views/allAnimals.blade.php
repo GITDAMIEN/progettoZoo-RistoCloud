@@ -21,7 +21,7 @@
     @else
             
         {{-- CAMPI DI RICERCA --}}
-        <form id="searchForm" action="" class="text-center container mb-5 pb-3">
+        <form id="searchForm" action="" class="text-center container mb-3 pb-3">
             <div class="row">
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="nameSearch" class="form-label">Cerca per nome</label>
@@ -52,6 +52,21 @@
             <button type="button" id="searchBtn" class="btn btn-warning w-25 mt-2">Cerca</button>
         </form>
         
+        {{-- SELECT PER ORDINAMENTO ANIMALI --}}
+        <div class="container mb-5">
+            <div class="row justify-content-center text-center">
+                <div class="mb-3 col-12 col-md-6 col-lg-3">
+                    <label for="sortSelect" class="form-label">Ordina risultati</label>
+                    <select id="sortSelect" class="form-select">
+                        <option value="a2z" selected>Dalla A alla Z</option>
+                        <option value="z2a">Dalla Z alla A</option>
+                        <option value="young2old">Dal più giovane al più vecchio</option>
+                        <option value="old2young">Dal più vecchio al più giovane</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         {{-- CARDS DEGLI ANIMALI --}}
         <div id="cardsContainer" class="container">
             <div class="animalCards row justify-content-center mb-5">
