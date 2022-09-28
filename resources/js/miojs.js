@@ -161,16 +161,68 @@ if(window.location.pathname == '/allAnimals'){
 
 }
 
+
+
 // if(window.location.pathname == '/allAnimals' || window.location.pathname == '/allCategories'){
+    
+    //     // CENTRARE NAVIGATION LINKS IN CASO DI PAGINATION
+    //     let cardsContainerNav = document.querySelector("#cardsContainer nav");
+    
+    //     cardsContainerNav.getElementsByTagName('div')[0].classList.remove('justify-content-between');
+    //     cardsContainerNav.getElementsByTagName('div')[0].classList.add('justify-content-center');
+    
+    //     cardsContainerNav.getElementsByTagName('div')[1].classList.remove('justify-content-sm-between');
+    //     cardsContainerNav.getElementsByTagName('div')[1].classList.add('justify-content-sm-center');
+    
+    //     cardsContainerNav.getElementsByTagName('div')[1].removeChild(cardsContainerNav.getElementsByTagName('div')[1].getElementsByTagName('div')[0]);
+    // }
+    
 
-//     // CENTRARE NAVIGATION LINKS
-//     let cardsContainerNav = document.querySelector("#cardsContainer nav");
 
-//     cardsContainerNav.getElementsByTagName('div')[0].classList.remove('justify-content-between');
-//     cardsContainerNav.getElementsByTagName('div')[0].classList.add('justify-content-center');
 
-//     cardsContainerNav.getElementsByTagName('div')[1].classList.remove('justify-content-sm-between');
-//     cardsContainerNav.getElementsByTagName('div')[1].classList.add('justify-content-sm-center');
+//SE SONO ALLA PAGINA DI TUTTE LE CATEGORIE
+if(window.location.pathname == '/allCategories'){
 
-//     cardsContainerNav.getElementsByTagName('div')[1].removeChild(cardsContainerNav.getElementsByTagName('div')[1].getElementsByTagName('div')[0]);
-// }
+    // Selezione delle card dall'html
+    let categoriesCards = Array.from(document.querySelectorAll('.card'));
+
+    // ordinamento categoriesCards
+    let sortSelect = document.querySelector('#sortSelect');
+    sortSelect.addEventListener('input', sortAnimals);
+
+    sortAnimals() //sort iniziale al caricamento della pagina, in ordine alfabetico
+
+    function sortAnimals(){
+        switch(sortSelect.value){
+            case 'a2z' :    categoriesCards.sort((a,b)=>{
+                                if(a.children[0].children[1].children[0].innerText.toLowerCase() < b.children[0].children[1].children[0].innerText.toLowerCase())
+                                    return -1
+                                if(b.children[0].children[1].children[0].innerText.toLowerCase() < a.children[0].children[1].children[0].innerText.toLowerCase())
+                                    return 1
+                                    
+                                // se stesso nome
+                                return 0
+                            })
+                            break;
+            case 'z2a' :    categoriesCards.sort((b,a)=>{
+                                if(a.children[0].children[1].children[0].innerText.toLowerCase() < b.children[0].children[1].children[0].innerText.toLowerCase())
+                                    return -1
+                                if(b.children[0].children[1].children[0].innerText.toLowerCase() < a.children[0].children[1].children[0].innerText.toLowerCase())
+                                    return 1
+                                
+                                // se stesso nome
+                                return 0
+                            })
+                            break;
+            default : break;
+        }
+
+        orderCards();
+    }
+
+    function orderCards(){
+        categoriesCards.forEach((card,i) =>{
+            card.style.order = i;
+        })
+    }    
+}

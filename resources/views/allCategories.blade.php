@@ -20,6 +20,19 @@
         </div>
     @else
         
+        {{-- SELECT PER ORDINAMENTO ANIMALI --}}
+        <div class="container mb-5">
+            <div class="row justify-content-center text-center">
+                <div class="mb-3 col-12 col-md-6 col-lg-3">
+                    <label for="sortSelect" class="form-label">Ordina risultati</label>
+                    <select id="sortSelect" class="form-select">
+                        <option value="a2z" selected>Dalla A alla Z</option>
+                        <option value="z2a">Dalla Z alla A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         {{-- CARDS DELLE CATEGORIE --}}
         <div id="cardsContainer" class="container">
             <div class="animalCards row justify-content-center mb-5">
