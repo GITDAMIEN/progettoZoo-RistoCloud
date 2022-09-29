@@ -34,7 +34,7 @@
                     <input id="newAnimalAgeInput" type="number" class="form-control" name="animalAge" placeholder="Età animale" value="{{old('animalAge')}}">
                 </div>
                 <div class="w-100 text-center mt-4">
-                    <label for="newAnimalImageInput" class="form-label">Immagine animale</label>
+                    <label for="newAnimalImageInput" class="form-label">Immagine animale (formati accettati: jpg,jpeg,png)</label>
                     <input id="newAnimalImageInput" type="file" class="form-control" name="animalImage" value="{{old('animalImage')}}">
                 </div>
 
@@ -66,7 +66,7 @@
                     <textarea name="categoryDescription" id="newCategoryDescriptionInput"  class="form-control" cols="30" rows="6" placeholder="Descrizione categoria">{{old('categoryDescription')}}</textarea>
                 </div>
                 <div class="w-100 text-center mt-4">
-                    <label for="newCategoryImageInput" class="form-label">Immagine categoria</label>
+                    <label for="newCategoryImageInput" class="form-label">Immagine categoria (formati accettati: jpg,jpeg,png)</label>
                     <input id="newCategoryImageInput" type="file" class="form-control" name="categoryImage" value="{{old('categoryImage')}}">
                 </div>
 

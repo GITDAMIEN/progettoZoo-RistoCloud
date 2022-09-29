@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'categoryName' => 'required|min:4|max:30',
+            'categoryName' => 'required|min:4|max:30|unique:categories,name',
             'categoryDescription' => 'required|min:20|max:100',
             'categoryImage' => 'image|max:512'
         ];
@@ -36,6 +36,7 @@ class CategoryRequest extends FormRequest
             'categoryName.required' => 'Il nome della categoria è obbligatorio',
             'categoryName.min' => 'Il nome della categoria dev\'essere di minimo 4 caratteri',
             'categoryName.max' => 'Il nome della categoria dev\'essere di massimo 30 caratteri',
+            'categoryName.unique' => 'Esiste già una categoria con questo nome',
             'categoryDescription.required' => 'La descrizione della categoria è obbligatoria',
             'categoryDescription.min' => 'La descrizione della categoria dev\'essere di minimo 20 caratteri',
             'categoryDescription.max' => 'La descrizione della categoria dev\'essere di massimo 100 caratteri',
