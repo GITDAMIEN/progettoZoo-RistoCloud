@@ -69,7 +69,7 @@ class ZooController extends Controller
 
         $category->name = $request->input('categoryName');
         $category->description = $request->input('categoryDescription');
-        $category->image = $request->file("categoryImage") ? $request->file("categoryImage")->store("public/images") : NULL;
+        $category->image = $request->file("categoryImage") ? $request->file("categoryImage")->store("public/images") : $category->image; //mantiene immagine esistente se non viene caricata una nuova
         $category->save();
 
         return redirect()->route('allCategories')->with('message', 'Categoria modificata correttamente');
