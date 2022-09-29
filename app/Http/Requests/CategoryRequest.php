@@ -26,7 +26,7 @@ class CategoryRequest extends FormRequest
         return [
             'categoryName' => 'required|min:4|max:30|unique:categories,name',
             'categoryDescription' => 'required|min:20|max:100',
-            'categoryImage' => 'image|max:512'
+            'categoryImage' => 'image|max:512|mimes:jpeg,jpg,png'
         ];
     }
 
