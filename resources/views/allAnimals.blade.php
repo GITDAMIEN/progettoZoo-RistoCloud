@@ -12,35 +12,29 @@
         {{-- BOTTONE PER MODALITA' DI MODIFICA --}}
         <button id="modifyModeBtn" class="btn redZooBg mb-4" onclick="switchMod()"><i class="fa-solid fa-pen me-3"></i>Modalità modifica: <span id="modSpan">OFF</span></button>
     @endauth
-
-    @if (count($allAnimals)<1)
-        <div class="row">
-            <div class="gZooFont text-center mb-5 fs-1 redZoo">Nessun animale disponibile!</div>
-            <a class="btn btn-warning w-50 offset-3" href="{{route('enlargeZoo')}}">Inserisci tu il primo animale!</a>
-        </div>
-    @else
             
         {{-- CAMPI DI RICERCA --}}
-        <form id="searchForm" action="" class="text-center container mb-3 pb-3">
+        <form id="searchForm" method="GET" action="{{route('allAnimals')}}" class="text-center container mb-3 pb-3">
+            @csrf
             <div class="row">
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="nameSearch" class="form-label">Cerca per nome</label>
-                    <input type="text" class="form-control" id="nameSearch" placeholder="Cerca per nome">
+                    <input type="text" class="form-control" id="nameSearch" name="nameSearch" placeholder="Cerca per nome">
                 </div>
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="descriptionSearch" class="form-label">Cerca per descrizione</label>
-                    <input type="text" class="form-control" id="descriptionSearch" placeholder="Cerca per descrizione">
+                    <input type="text" class="form-control" id="descriptionSearch" name="descriptionSearch" placeholder="Cerca per descrizione">
                 </div>
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="ageSearch" class="form-label">Cerca per età (numero)</label>
                     <div id="ageSearch" class="d-flex">
-                        <input type="number" class="form-control w-50 me-1" placeholder="Età minima">
-                        <input type="number" class="form-control w-50 ms-1" placeholder="Età massima">
+                        <input type="number" class="form-control w-50 me-1" placeholder="Età minima" name="minAgeSearch" id="minAgeSearch">
+                        <input type="number" class="form-control w-50 ms-1" placeholder="Età massima" name="maxAgeSearch" id="maxAgeSearch">
                     </div>
                 </div>
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="categorySearch" class="form-label">Cerca per categoria</label>
-                    <select id="categorySearch" class="form-select">
+                    <select id="categorySearch" class="form-select" name="categorySearch">
                         <option value="0" selected>Tutte le categorie</option>
                         @foreach($allCategories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
@@ -48,16 +42,12 @@
                     </select>
                 </div>
             </div>
-            <button type="reset" id="resetBtn" class="btn greyZooBg w-25 mt-2">Reset</button>
-            <button type="button" id="searchBtn" class="btn btn-warning w-25 mt-2">Cerca</button>
-        </form>
-        
-        {{-- SELECT PER ORDINAMENTO ANIMALI --}}
-        <div class="container mb-5">
+
+            {{-- SELECT PER ORDINAMENTO ANIMALI --}}
             <div class="row justify-content-center text-center">
                 <div class="mb-3 col-12 col-md-6 col-lg-3">
                     <label for="sortSelect" class="form-label">Ordina risultati</label>
-                    <select id="sortSelect" class="form-select">
+                    <select id="sortSelect" class="form-select" name="orderBy">
                         <option value="a2z" selected>Dalla A alla Z</option>
                         <option value="z2a">Dalla Z alla A</option>
                         <option value="young2old">Dal più giovane al più vecchio</option>
@@ -65,7 +55,29 @@
                     </select>
                 </div>
             </div>
+            <button type="submit" id="resetBtn" class="btn greyZooBg w-25 mt-2" form="resetForm">Reset</button>
+            <button type="submit" id="searchBtn" class="btn btn-warning w-25 mt-2">Cerca</button>
+        </form>
+        <form id="resetForm" method="GET" action="{{route('allAnimals')}}" class="d-none">
+            @csrf
+            <input id="nameSearch" name="nameSearch" value="" class="d-none">
+            <input id="descriptionSearch" name="descriptionSearch" value="" class="d-none">
+            <input name="minAgeSearch" id="minAgeSearch" value="" class="d-none">
+            <input name="maxAgeSearch" id="maxAgeSearch" value="" class="d-none">
+            <select id="categorySearch" name="categorySearch" value="0" class="d-none">   
+            <select id="sortSelect" name="orderBy" value="a2z" class="d-none">
+        </form>
+        
+        <div class="container mb-5">
         </div>
+
+
+    @if (count($allAnimals)<1)
+        <div class="row">
+            <div class="gZooFont text-center mb-5 fs-1 redZoo">Nessun animale corrisponde alla ricerca effettuata</div>
+            <a class="btn btn-warning w-50 offset-3" href="{{route('enlargeZoo')}}">Inserisci un nuovo animale</a>
+        </div>
+    @else
 
         {{-- CARDS DEGLI ANIMALI --}}
         <div id="cardsContainer" class="container">

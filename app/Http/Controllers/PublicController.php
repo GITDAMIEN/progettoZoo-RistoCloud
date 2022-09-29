@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
+use App\Http\Requests\AnimalSearchRequest;
 
 class PublicController extends Controller
 {
@@ -28,10 +29,18 @@ class PublicController extends Controller
         return view('contactUs');
     }
     
-    public function allAnimals()
+    public function allAnimals(Request $request)
     {
-        // $allAnimals = Animal::orderBy('created_at', 'DESC')->paginate(16);
-        $allAnimals = Animal::all();
+        $allAnimals = Animal::where('age', '>=' , $request->input('minAgeSearch') ?? '0')
+                            ->where('age', '<=' , $request->input('maxAgeSearch') ?? '99999')
+                            ->where('description', 'LIKE', "%". $request->input('descriptionSearch') . "%")
+                            ->where('name', 'LIKE', "%". $request->input('nameSearch') . "%")
+                            ->where('category_id', 'LIKE', "%". $request->input('categorySearch') . "%")
+                            ->orderBy(
+                                ($request->input('orderBy') == 'a2z' || $request->input('orderBy') == 'z2a') ? 'name' : 'age',
+                                ($request->input('orderBy') == 'a2z' || $request->input('orderBy') == 'young2old') ? 'ASC' : 'DESC')
+                            ->get();
+        
         $allCategories = Category::all();
         
         return view('allAnimals', compact('allAnimals', 'allCategories'));

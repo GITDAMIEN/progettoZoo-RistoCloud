@@ -1,101 +1,108 @@
 //SE SONO ALLA PAGINA DI TUTTI GLI ANIMALI
 if(window.location.pathname == '/allAnimals'){
 
-    // Selezione delle card dall'html
-    let animalCards = Array.from(document.querySelectorAll('.card'));
+    // // Selezione delle card dall'html
+    // let animalCards = Array.from(document.querySelectorAll('.card'));
 
-    //Selezione tasto cerca
-    let searchBtn = document.querySelector('#searchBtn');
-    let resetBtn = document.querySelector('#resetBtn');
+    // //Selezione tasto cerca
+    // let searchBtn = document.querySelector('#searchBtn');
+    // let resetBtn = document.querySelector('#resetBtn');
 
-    searchBtn.addEventListener('click', ()=>{
-        let nameSearched = document.querySelector('#nameSearch').value.toLowerCase();
-        let descriptionSearched = document.querySelector('#descriptionSearch').value.toLowerCase();
-        let ageSearched = document.querySelector('#ageSearch');
-        let categorySearched = document.querySelector('#categorySearch').value;
+    // searchBtn.addEventListener('click', ()=>{
+    //     let nameSearched = document.querySelector('#nameSearch').value.toLowerCase();
+    //     let descriptionSearched = document.querySelector('#descriptionSearch').value.toLowerCase();
+    //     let ageSearched = document.querySelector('#ageSearch');
+    //     let categorySearched = document.querySelector('#categorySearch').value;
         
-        // console.log(ageSearched);
-        // console.log(nameSearched);
+    //     // console.log(ageSearched);
+    //     // console.log(nameSearched);
 
-        searchName(nameSearched);
-        searchDescription(descriptionSearched);
-        searchAge(ageSearched);
-        // console.log(categorySearched)
-        searchCategory(categorySearched);
-    })
+    //     searchName(nameSearched);
+    //     searchDescription(descriptionSearched);
+    //     searchAge(ageSearched);
+    //     // console.log(categorySearched)
+    //     searchCategory(categorySearched);
+    // })
 
-    resetBtn.addEventListener('click', ()=>{
-        animalCards.forEach(card=>{
-            card.classList.add('d-block')
-            card.classList.remove('d-none')
-        })
-    })
+    // resetBtn.addEventListener('click', ()=>{
+    //     animalCards.forEach(card=>{
+    //         card.classList.add('d-block')
+    //         card.classList.remove('d-none')
+    //     })
+    // })
 
-    //ricerca per nome
-    function searchName(nameSearched){
-        animalCards.forEach(card=>{
-            let animalName = card.children[0].children[1].children[0].innerText.toLowerCase();
+    // //ricerca per nome
+    // function searchName(nameSearched){
+    //     animalCards.forEach(card=>{
+    //         let animalName = card.children[0].children[1].children[0].innerText.toLowerCase();
 
-            if(animalName.includes(nameSearched)){
-                card.classList.add('d-block')
-                card.classList.remove('d-none')
-            }
-            else{
-                card.classList.add('d-none')
-                card.classList.remove('d-block')
-            }
-        })
-    }
+    //         if(animalName.includes(nameSearched)){
+    //             card.classList.add('d-block')
+    //             card.classList.remove('d-none')
+    //         }
+    //         else{
+    //             card.classList.add('d-none')
+    //             card.classList.remove('d-block')
+    //         }
+    //     })
+    // }
 
-    //ricerca per descrizione
-    function searchDescription(descriptionSearched){
-        animalCards.forEach(card=>{
-            let animalDescription = card.children[0].children[1].children[2].innerText.toLowerCase();
+    // //ricerca per descrizione
+    // function searchDescription(descriptionSearched){
+    //     animalCards.forEach(card=>{
+    //         let animalDescription = card.children[0].children[1].children[2].innerText.toLowerCase();
 
-            if(! animalDescription.includes(descriptionSearched)){
-                card.classList.add('d-none')
-                card.classList.remove('d-block')
-            }
-        })
-    }
+    //         if(! animalDescription.includes(descriptionSearched)){
+    //             card.classList.add('d-none')
+    //             card.classList.remove('d-block')
+    //         }
+    //     })
+    // }
 
-    //ricerca per età
-    function searchAge(ageSearched){
-        animalCards.forEach(card=>{
-            let animalAge = Number(card.children[0].children[1].children[3].children[0].innerText)
-            let minSearched = Number(ageSearched.children[0].value);
-            let maxSearched = Number(ageSearched.children[1].value);
+    // //ricerca per età
+    // function searchAge(ageSearched){
+    //     animalCards.forEach(card=>{
+    //         let animalAge = Number(card.children[0].children[1].children[3].children[0].innerText)
+    //         let minSearched = Number(ageSearched.children[0].value);
+    //         let maxSearched = Number(ageSearched.children[1].value);
 
-            // console.log("Età effettiva: " + animalAge);
-            // console.log("Minimo cercato: " + minSearched);
-            // console.log("Massimo cercato: " + maxSearched);
+    //         // console.log("Età effettiva: " + animalAge);
+    //         // console.log("Minimo cercato: " + minSearched);
+    //         // console.log("Massimo cercato: " + maxSearched);
 
-            if((minSearched && animalAge < minSearched) || (maxSearched && animalAge > maxSearched)){
-                card.classList.add('d-none')
-                card.classList.remove('d-block')
-            }
-        })
-    }
+    //         if((minSearched && animalAge < minSearched) || (maxSearched && animalAge > maxSearched)){
+    //             card.classList.add('d-none')
+    //             card.classList.remove('d-block')
+    //         }
+    //     })
+    // }
 
-    //ricerca per categoria
-    function searchCategory(categorySearched){
-        animalCards.forEach(card=>{
-            let animalCategory = card.children[0].children[1].children[1].getAttribute("value")
+    // //ricerca per categoria
+    // function searchCategory(categorySearched){
+    //     animalCards.forEach(card=>{
+    //         let animalCategory = card.children[0].children[1].children[1].getAttribute("value")
 
-            // console.log(animalCategory)
-            if(animalCategory != categorySearched && categorySearched != 0){
-                card.classList.add('d-none')
-                card.classList.remove('d-block')
-            }
-        })
-    }
+    //         // console.log(animalCategory)
+    //         if(animalCategory != categorySearched && categorySearched != 0){
+    //             card.classList.add('d-none')
+    //             card.classList.remove('d-block')
+    //         }
+    //     })
+    // }
 
-    //autosettaggio categoria se presente come parametor nell'url
+    //autosettaggio categoria se presente come parametro nell'url
     let urlParams = new URLSearchParams(window.location.search);
 
-    if(urlParams.get('category')){
-        document.querySelector('#categorySearch').value = urlParams.get('category');
-        searchCategory(urlParams.get('category'));
+    document.querySelector('#minAgeSearch').value = urlParams.get('minAgeSearch');
+    document.querySelector('#maxAgeSearch').value = urlParams.get('maxAgeSearch');
+    document.querySelector('#nameSearch').value = urlParams.get('nameSearch');
+    document.querySelector('#descriptionSearch').value = urlParams.get('descriptionSearch');
+    
+    if(urlParams.get('categorySearch')){
+        document.querySelector('#categorySearch').value = urlParams.get('categorySearch');
+    }
+    if(urlParams.get('orderBy')){
+        document.querySelector('#sortSelect').value = urlParams.get('orderBy');
     }
 
 
