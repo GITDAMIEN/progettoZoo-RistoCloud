@@ -58,7 +58,7 @@ class ZooController extends Controller
         $animal->name = $request->input('animalName');
         $animal->description = $request->input('animalDescription');
         $animal->age = $request->input('animalAge');
-        $animal->image = $request->file("animalImage") ? $request->file("animalImage")->store("public/images") : NULL;
+        $animal->image = $request->file("animalImage") ? $request->file("animalImage")->store("public/images") : $animal->image; //mantiene immagine esistente se non viene caricata una nuova
         $animal->category_id = $request->input('category');
         $animal->save();
 

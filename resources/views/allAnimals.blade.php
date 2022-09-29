@@ -138,10 +138,13 @@
         let mod = false;
         let modSpan = document.querySelector('#modSpan');
         let cards = document.querySelectorAll('.card');
+        let modifyModeBtn = document.querySelector('#modifyModeBtn');
 
         function switchMod(){
             mod = !mod;
             modSpan.innerHTML = mod ? 'ON' : 'OFF';
+            modifyModeBtn.classList.toggle('greenZooBg');
+            modifyModeBtn.classList.toggle('redZooBg');
 
             cards.forEach(card => {
                 card.children[1].classList.toggle('d-none');

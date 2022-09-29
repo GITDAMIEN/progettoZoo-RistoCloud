@@ -71,10 +71,13 @@
         let mod = false;
         let modSpan = document.querySelector('#modSpan');
         let modifyIcons2 = document.querySelector('#modifyIcons2');
+        let modifyModeBtn = document.querySelector('#modifyModeBtn');
 
         function switchMod(){
             mod = !mod;
             modSpan.innerHTML = mod ? 'ON' : 'OFF';
+            modifyModeBtn.classList.toggle('greenZooBg');
+            modifyModeBtn.classList.toggle('redZooBg');
 
             modifyIcons2.classList.toggle('d-none');
             modifyIcons2.classList.toggle('d-block');
