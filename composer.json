@@ -10,7 +10,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "guzzlehttp/psr7": "^2.4.5",
         "laravel/fortify": "^1.13",
-        "laravel/framework": "^9.19",
+        "laravel/framework": "^9.52.17",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "symfony/http-foundation": "^6.4.14",
